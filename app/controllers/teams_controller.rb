@@ -1,4 +1,4 @@
-class TeamsController < ApplicationController
+class TeamsController < OpenReadController
   before_action :set_team, only: [:show, :update, :destroy]
 
   # GET /teams
@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 
   # POST /teams
   def create
-    @team = Team.new(team_params)
+    @team = current_user.teams.build(team_params)
 
     if @team.save
       render json: @team, status: :created
