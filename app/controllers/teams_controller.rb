@@ -1,4 +1,4 @@
-class TeamsController < OpenReadController
+class TeamsController < ProtectedController
   before_action :set_team, only: [:show, :update, :destroy]
 
   # GET /teams
