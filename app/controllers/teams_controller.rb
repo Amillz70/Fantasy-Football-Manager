@@ -3,7 +3,7 @@ class TeamsController < ProtectedController
 
   # GET /teams
   def index
-    @teams = Team.all
+    @teams = current_user.teams.all
 
     render json: @teams
   end
