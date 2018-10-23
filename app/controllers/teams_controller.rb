@@ -1,5 +1,5 @@
-class TeamsController < OpenReadController
-  before_action :set_team, only: [:show, :update, :destroy]
+class TeamsController < ProtectedController
+  before_action :set_team, only: %i[show update destroy]
 
   # GET /teams
   def index
